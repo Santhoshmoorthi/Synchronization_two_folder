@@ -15,6 +15,7 @@ def get_args():
     return parser.parse_args()
 
 def get_file_hash(filepath):
+    """tried to use md5"""
     with open(filepath,'rb') as f:
         file = f.read()
     return hashlib.md5(file).hexdigest()
@@ -22,7 +23,7 @@ def get_file_hash(filepath):
 def syn_folders(source_path,duplicate_path,log_path):
     if not os.path.exists(duplicate_path):
         os.makedirs(duplicate_path)
-
+"""creating a directory for source and duplicate file"
 
     source_folder = os.listdir(source_path)
     duplicate_folder = os.listdir(duplicate_path)
